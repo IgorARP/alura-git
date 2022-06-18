@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+<h1>Receitas de compras</h1>
+<h2>Compre o que esta na lista abaixo:</h2>
+
+<script>
+    alert("O que vamos comprar?")
+    function pulaLinha() {
+        document.write("<br>");
+
+    }
+ 
+    function mostrar(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }   
+    var ingredientes = [];
+
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+    var contador = 1;
+
+    while( contador <= quantidade) {
+
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+        
+        var existe = false
+
+        for(var posicao = 0; posicao < ingredientes.length; posicao++) {
+
+            if(ingredientes[posicao] == ingrediente){
+                existe = true
+                break
+            }
+        }
+
+        if(existe == false){
+            ingredientes.push(ingrediente);
+            contador++;
+        }      
+        
+    }
+
+    mostrar(ingredientes)
+    console.log(ingredientes);
+</script>
